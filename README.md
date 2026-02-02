@@ -1,61 +1,176 @@
-# 🚀 Getting started with Strapi
+# Strapi Setup & Exploration (Task 1)
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+## 📌 Task Overview
 
-### `develop`
-
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
-
-```
-npm run develop
-# or
-yarn develop
-```
-
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+The goal of this task was to:
+- Clone the official Strapi repository
+- Run Strapi locally
+- Explore the project folder structure
+- Start the Admin Panel
+- Create a sample content type
+- Add actual content
+- Push the setup to GitHub
+- Document the entire process
+- Record a Loom video walkthrough
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+## 🛠 Prerequisites
+
+Ensure the following are installed on your system:
+
+- Node.js (v18 or later recommended)
+- npm or yarn
+- Git
+
+---
+
+## 📥 Step 1: Clone the Official Strapi Repository
+
+```bash
+git clone https://github.com/strapi/strapi.git
+cd strapi
+```
+
+This repository is the **Strapi monorepo**, which contains:
+- Core Strapi packages
+- Plugins
+- Admin panel source
+- Utilities and examples
+
+⚠️ **Note:**  
+The Strapi monorepo is meant for **Strapi contributors and internal development** and is **not directly runnable** as an application.
+
+---
+
+## 📁 Step 2: Exploring the Folder Structure
+
+Key directories explored:
+
+- `packages/` → Core Strapi packages and plugins
+- `packages/core/` → Main backend logic
+- `packages/plugins/` → Official Strapi plugins
+- `packages/admin/` → Admin panel source code
+- `examples/` → Example projects
+- `scripts/` → Build and helper scripts
+
+This exploration helped understand how Strapi is structured internally.
+
+---
+
+## 🚀 Step 3: Creating a Runnable Strapi Application
+
+Since the monorepo itself cannot be run directly, a new Strapi project was created using the official CLI.
+
+```bash
+npx create-strapi-app@latest my-strapi-app
+cd my-strapi-app
+npm run develop
+```
+
+This starts the Strapi development server.
+
+---
+
+## 🖥 Step 4: Starting the Admin Panel
+
+After running the project, the Admin Panel was accessed at:
+
+```
+http://localhost:1337/admin
+```
+
+An admin account was created to manage content and settings.
+
+---
+
+## 🧱 Step 5: Creating a Sample Content Type
+
+Using **Content-Type Builder** in the Admin Panel:
+
+### Collection Type Created: `Blog`
+
+Fields added:
+- `title` (Text)
+- `content` (Rich Text)
+- `published` (Boolean)
+
+The content type was saved and the server restarted when prompted.
+
+---
+
+## 📝 Step 6: Adding Actual Content
+
+From **Content Manager**:
+- Created multiple Blog entries
+- Filled in title and content
+- Published entries to make them available via API
+
+---
+
+## 🔐 Step 7: Enabling Public API Access
+
+By default, Strapi APIs are secured.
+
+Steps followed:
+- Settings → Users & Permissions Plugin
+- Roles → Public
+- Enabled:
+  - `find`
+  - `findOne` for Blog collection
+
+This allowed public API access.
+
+---
+
+## 🌐 Step 8: Verifying API Response
+
+The content was successfully accessed using:
+
+```
+http://localhost:1337/api/blogs
+```
+
+The API returned JSON data containing published blog entries.
+
+---
+
+## ☁️ Step 9: Pushing to GitHub
+
+```bash
+git add .
+git commit -m "Completed Strapi setup and created sample content type"
+git push origin main
+```
+
+A Pull Request was created for review.
+
+---
+
+## 🎥 Loom Video
+
+A Loom video was recorded demonstrating:
+- Repository cloning
+- Folder structure exploration
+- Running the Strapi app
+- Admin Panel usage
+- Content type creation
+- Adding and fetching content via API
+
+---
+
+## 📌 Conclusion
+
+This task provided hands-on experience with:
+- Strapi architecture
+- Headless CMS concepts
+- Content modeling
+- Role-based API permissions
+- REST API consumption
+
+---
+
+## 🔗 Useful Links
+
+- Strapi Official Repo: https://github.com/strapi/strapi
+- Local Admin Panel: http://localhost:1337/admin
