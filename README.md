@@ -177,6 +177,7 @@ A Loom video was recorded demonstrating:
 - Content type creation
 - Adding and fetching content via API
 
+Link: https://www.loom.com/share/70a80758d9c346668cd2b3cb894c4072
 ---
 
 ## Conclusion
