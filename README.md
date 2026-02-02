@@ -25,6 +25,22 @@ Ensure the following are installed on your system:
 
 ---
 
+## Screenshots
+
+- Admin_Panel
+
+![Admin_Panel](Screenshots/admin_panel.PNG)
+
+- Restaurant_API
+
+![Restaurant_API](Screenshots/Restaurant_API.PNG)
+
+- Category_API
+
+![Category_API](Screenshots/Category_API.PNG)
+
+---
+
 ## Step 1: Clone the Official Strapi Repository
 
 ```bash
